@@ -23,7 +23,7 @@ const VideosGrid = () => {
     if (data?.length>0){
 
       return (
-        <div className='grid mr-10 h-full grid-cols-6 gap-10 ml-60'>
+        <div className='grid mx-auto md:mx-10 h-full grid-cols-1   min-[500px]:grid-cols-2  md:grid-cols-3 xl:grid-cols-5 2xl:grid-cols-7   gap-10'>
       {data?.map((item,i)=>( <VideoCard key={i} item={item} ></VideoCard>))}
     </div>
   )

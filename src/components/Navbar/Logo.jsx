@@ -12,7 +12,7 @@ const Logo = () => {
       </IconButton>
         
         <span className='text-red-500 fill-white '><AiFillYoutube/></span>
-        <span className='text-xl font-sans font-bold tracking-tightest text-white'>YouTube</span>
+        <span className='text-xl font-sans font-bold tracking-tightest hidden md:inline text-white'>YouTube</span>
     </div>
 </Link>
   )

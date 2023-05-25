@@ -41,8 +41,8 @@ const {width} = useWindowSize();
     </div>}
 
     {/* //Desktop Player */}
-    {width > 720 &&  <div className='hidden w-fit m-auto gap-4 md:flex  '>
-        <ReactPlayer playing={true} controls={true} width={450} height={900}  url = {video?.submission?.mediaUrl} />
+    {width > 720 &&  <div className='hidden w-fit m-auto gap-4 md:flex   '>
+        <ReactPlayer playing={true} controls={true} width={"40vh"} height={"80vh"} url={video?.submission?.mediaUrl} />
         <div className='text-start w-[35vw]  overflow-hidden m-auto flex flex-col justify-start gap-4'>
             <h2 className='font-bold text-2xl'>  {video.submission.title}</h2>
             

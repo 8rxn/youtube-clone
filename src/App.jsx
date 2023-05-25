@@ -1,24 +1,26 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import { Button } from '@material-tailwind/react'
 import Navbar from './components/shared/Navbar'
 import { Route, Routes } from 'react-router-dom'
-import VideosGrid from './components/shared/VideosGrid'
+import Home from './pages/Home'
+import Watch from './pages/Watch'
+import { VideoDetails } from './context/VideoContext'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [video,setVideo]=useState({});
 
   return (
-    <>
-    <nav className='w-full'>
+    <VideoDetails.Provider value={{video,setVideo}}>
+    <nav className='w-full fixed top-0 bg-[#0f0f0f]'>
       <Navbar></Navbar>
     </nav>
+      <div className='mt-20'>
       <Routes>
-        <Route path='/' element={<VideosGrid/>}></Route>
+        <Route path='/' element={<Home />}></Route>
+        <Route path='/watch' element={<Watch/>}></Route>
       </Routes>
-    </>
+      </div>
+    </VideoDetails.Provider>
   )
 }
 

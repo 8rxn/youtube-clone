@@ -6,10 +6,10 @@ const NavProfile = () => {
   return (
     <div className='flex gap-6 absolute right-5 items-center'>
 
-        <IconButton variant="text" className='text-white text-xl rounded-full p-6'>
+        <IconButton variant="text" className='text-white text-xl rounded-full p-6 hidden md:inline-block'>
         <RiVideoAddLine/>
       </IconButton>
-        <IconButton variant="text" className='text-white text-xl rounded-full p-6'>
+        <IconButton variant="text" className='text-white text-xl rounded-full p-6 hidden md:inline-block'>
         <IoIosNotifications/>
       </IconButton>
       <Menu placement="bottom-end">

@@ -3,6 +3,7 @@ import ReactPlayer from 'react-player'
 import { VideoDetails } from '../context/VideoContext';
 import {AiOutlineLike, AiOutlineComment,AiOutlineLink} from 'react-icons/ai'
 import { Chip } from '@material-tailwind/react';
+import useWindowSize from "../hooks/useWindowSize"
 
 const PlaceHolder=()=>{
     return(
@@ -13,12 +14,12 @@ const PlaceHolder=()=>{
 const Watch = () => {
 const {video}= React.useContext(VideoDetails);
 
-let width = window.innerWidth
+const {width} = useWindowSize();
 
   return (
     <>
-    <div className='flex w-fit m-auto gap-4 flex-col md:hidden sm:items-start  items-center '>
-        {width<720 && <ReactPlayer playing={true} controls={true} width={"95vw"} height={"190vw"}  url = {video?.submission?.mediaUrl} />}
+    {width<720 && <div className='flex w-fit m-auto gap-4 flex-col md:hidden sm:items-start  items-center '>
+         <ReactPlayer playing={true} controls={true} width={"80vw"} height={"70vh"}  url = {video?.submission?.mediaUrl} />
         <div className='text-start md:w-[30vw] sm:w-[80vw] max-w-[95vw] overflow-hidden m-auto flex flex-col gap-4'>
             <h2 className='font-bold text-2xl'>  {video.submission.title}</h2>
             <div className='flex w-full min-[450]:justify-start justify-center'>
@@ -37,11 +38,11 @@ let width = window.innerWidth
             <h2>{video.submission.description}</h2>
             <a href={video.submission.hyperlink} target='_blank' rel='noreferrer'  className='bg-[#121212] border-2 rounded-xl px-4 w-fit py-2 hover:bg-[#222222] m-auto duration-150 ease-in'>Go to GroCare <span><AiOutlineLink></AiOutlineLink> </span></a>
         </div>
-    </div>
+    </div>}
 
     {/* //Desktop Player */}
-    <div className='hidden w-fit m-auto gap-4 md:flex  '>
-        {width > 720 && <ReactPlayer playing={true} controls={true} width={450} height={900}  url = {video?.submission?.mediaUrl} />}
+    {width > 720 &&  <div className='hidden w-fit m-auto gap-4 md:flex  '>
+        <ReactPlayer playing={true} controls={true} width={450} height={900}  url = {video?.submission?.mediaUrl} />
         <div className='text-start w-[35vw]  overflow-hidden m-auto flex flex-col justify-start gap-4'>
             <h2 className='font-bold text-2xl'>  {video.submission.title}</h2>
             
@@ -63,7 +64,7 @@ let width = window.innerWidth
 
             <a href={video.submission.hyperlink} target='_blank' rel='noreferrer'  className='bg-[#121212] border-2 rounded-xl px-4 w-fit py-2 hover:bg-[#222222] duration-150 ease-in self-end '>Go to GroCare <span><AiOutlineLink></AiOutlineLink> </span></a>
         </div>
-    </div>
+    </div>}
     </>
   )
 }

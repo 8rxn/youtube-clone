@@ -10,7 +10,7 @@ const VideoCard = ({item}) => {
   return (
     <Link to={`/watch`} className='w-fit m-auto' onClick={()=>{setVideo(item)}}>
     <div className='flex flex-col w-full gap-4 md:items-start '>
-      {<img src={submission.thumbnail} loading='lazy' width={314} height={176} className='rounded-lg' /> ||  <Skeleton count={1} height={300} ></Skeleton>}
+      {<img src={submission.thumbnail} loading='lazy' width={314} height={176} className='rounded-lg' /> || <Skeleton count={1} height={300} ></Skeleton>}
         <div className="flex gap-4 text-start"> 
         <img src={creator.pic} loading='lazy' className=' w-12  aspect-square h-fit rounded-full object-cover' alt={creator.name+" channel"} />
         <div>

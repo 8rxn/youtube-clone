@@ -4,7 +4,7 @@ import SearchBar from "../Navbar/SearchBar"
 import NavProfile from '../Navbar/NavProfile'
 const Navbar = () => {
   return (
-    <div className='sticky top-0 p-2 flex justify-center '>
+    <div className=' p-2 flex justify-center pb-10'>
       <Logo/>
       <SearchBar></SearchBar>
       <NavProfile></NavProfile>

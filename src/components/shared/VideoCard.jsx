@@ -1,15 +1,25 @@
-import React from 'react'
+import React,{useContext} from 'react'
+import { Link } from 'react-router-dom'
+import Skeleton from 'react-loading-skeleton'
+import { VideoDetails } from '../../context/VideoContext';
 
-const VideoCard = ({title,thumbnailSrc,creatorLogo, creator}) => {
+const VideoCard = ({item}) => {
+  const {setVideo}= useContext(VideoDetails);
+  const{submission, creator}=item
+
   return (
-    <div className='flex flex-col'>
-        <img src={thumbnailSrc} loading='lazy' alt={title+" thumbnail"} />
-        <div className="flex"> 
-        <img src={creatorLogo} alt={creator+" channel"} />
-        <h2>{title}</h2>
+    <Link to={`/watch`} onClick={()=>{setVideo(item)}}>
+    <div className='flex flex-col w-full gap-4 '>
+        {<img src={submission.thumbnail} loading='lazy' width={314} height={176} className='rounded-lg' alt={submission.title+" thumbnail"} />}
+        <div className="flex gap-4 text-start"> 
+        <img src={creator.pic} loading='lazy' className=' w-12  aspect-square h-fit rounded-full object-cover' alt={creator.name+" channel"} />
+        <div>
+        <h2 className='text-lg text-ellipsis overflow-hidden w-3/4 '>{submission.title}</h2>
+        <h3 className=' text-sm text-white/80'>{creator.name}</h3>
         </div>
-        <h3>{creator}</h3>
+        </div>
     </div>
+    </Link>
   )
 }
 

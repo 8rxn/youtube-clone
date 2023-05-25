@@ -12,11 +12,12 @@ const PlaceHolder=()=>{
 
 const Watch = () => {
 const {video}= React.useContext(VideoDetails);
-console.log(video)
+
+const width= window.innerWidth;
   return (
     <>
     <div className='flex w-fit m-auto gap-4 flex-col md:hidden sm:items-start  items-center '>
-        <ReactPlayer playing={true} controls={true} width={"95vw"} height={"190vw"}  url = {video?.submission?.mediaUrl} />
+        {width<720 &&  <ReactPlayer playing={true} controls={true} width={"95vw"} height={"190vw"}  url = {video?.submission?.mediaUrl} />}
         <div className='text-start md:w-[30vw] sm:w-[80vw] max-w-[95vw] overflow-hidden m-auto flex flex-col gap-4'>
             <h2 className='font-bold text-2xl'>  {video.submission.title}</h2>
             <div className='flex w-full min-[450]:justify-start justify-center'>
@@ -39,7 +40,7 @@ console.log(video)
 
     {/* //Desktop Player */}
     <div className='hidden w-fit m-auto gap-4 md:flex  '>
-        <ReactPlayer playing={true} controls={true} width={450} height={900}  url = {video?.submission?.mediaUrl} />
+        {width > 720 && <ReactPlayer playing={true} controls={true} width={450} height={900}  url = {video?.submission?.mediaUrl} />}
         <div className='text-start w-[30vw] overflow-hidden m-auto flex flex-col justify-start gap-4'>
             <h2 className='font-bold text-2xl'>  {video.submission.title}</h2>
             

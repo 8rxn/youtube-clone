@@ -1,6 +1,9 @@
-import React from "react";
+import React,{useRef} from "react";
 
 const Loader = () => {
+
+
+
   return (
     <h1 className="py-10">
       Loading...

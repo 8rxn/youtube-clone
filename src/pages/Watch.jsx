@@ -41,12 +41,14 @@ const {width} = useWindowSize();
     </div>}
 
     {/* //Desktop Player */}
-    {width > 720 &&  <div className='hidden w-fit m-auto gap-4 md:flex   '>
-        <ReactPlayer playing={true} controls={true} width={"40vh"} height={"80vh"} url={video?.submission?.mediaUrl} />
+
+    {width > 720 &&  <div className='hidden w-fit m-auto gap-4 md:flex  '>
+        <ReactPlayer playing={true} controls={true} width={"45vh"} height={"90vh"}  url = {video?.submission?.mediaUrl} />
+
         <div className='text-start w-[35vw]  overflow-hidden m-auto flex flex-col justify-start gap-4'>
             <h2 className='font-bold text-2xl'>  {video.submission.title}</h2>
             
-            <div className=' flex gap-4 items-center'>
+            <div className=' flex gap-4 items-center md:flex-wrap xl:flex-nowrap'>
                 <img src={video.creator.pic} alt={video.creator.name+" Logo"} className='w-12 aspect-square rounded-full' />
                 <div>
                 <h2 className='font-semibold text-xl leading-6 md:w-fit w-[35vw] min-[400]:w-[45vw] text-ellipsis overflow-hidden'>{video.creator.name}</h2>

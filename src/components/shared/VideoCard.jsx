@@ -5,7 +5,9 @@ import { VideoDetails } from '../../context/VideoContext';
 
 const VideoCard = ({item}) => {
   const {setVideo}= useContext(VideoDetails);
+  // console.log(item)
   const{submission, creator}=item
+
 
   return (
     <Link to={`/watch`} className='w-fit m-auto' onClick={()=>{setVideo(item)}}>

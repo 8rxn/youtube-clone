@@ -46,7 +46,7 @@ A skeleton was added before the loading of actual videos on the home page
 ![image](https://github.com/8rxn/youtube-clone/assets/75237697/ffa65e06-41ce-4f4e-aae5-1afd06a64591)
 
 
-## Installing this application in your local environment
+# Installing this application in your local environment
 
 ### Before running this application, ensure that you have the following software installed:
 

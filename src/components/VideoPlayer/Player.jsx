@@ -7,7 +7,7 @@ const VideoPlayer = ({width,height,url}) => {
     <ReactPlayer config={{
         file:{
             attributes:{
-                controlsList:"nodownload "
+                controlsList:"nodownload noremoteplayback noplaybackrate foobar"
             }
         }
     }} playing={true} controls={true} width={width} height={height}  url = {url} /> 

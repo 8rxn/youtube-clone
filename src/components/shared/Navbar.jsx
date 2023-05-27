@@ -1,7 +1,6 @@
 import React from 'react'
 import Logo from '../Navbar/Logo'
-import SearchBar from "../Navbar/SearchBar"
-import NavProfile from '../Navbar/NavProfile'
+import {SearchBar,NavProfile} from "../"
 const Navbar = () => {
   return (
     <div className=' p-2 flex justify-center'>

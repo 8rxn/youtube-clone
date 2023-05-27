@@ -1,10 +1,10 @@
 import React from 'react'
-import { VideoDetails } from '../../context/VideoContext';
-import {AiOutlineLike, AiOutlineComment,AiOutlineLink,AiOutlineArrowLeft} from 'react-icons/ai'
-import { Chip } from '@material-tailwind/react';
-import useWindowSize from "../../hooks/useWindowSize"
-import VideoPlayer from '../VideoPlayer/Player';
 import { Link } from 'react-router-dom';
+import {AiOutlineLike, AiOutlineComment,AiOutlineLink,AiOutlineArrowLeft} from 'react-icons/ai'
+import { VideoDetails } from '../../context/';
+import { Chip } from '@material-tailwind/react';
+import {useWindowSize} from "../../hooks/"
+import {VideoPlayer} from '../';
 
 const WatchPage = () => {
   const { video } = React.useContext(VideoDetails);

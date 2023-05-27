@@ -1,11 +1,10 @@
 import { useState } from 'react'
 import './App.css'
-import Navbar from './components/shared/Navbar'
 import { Route, Routes } from 'react-router-dom'
-import Home from './pages/Home'
-import Watch from './pages/Watch'
-import Error from './components/WatchPage/Error'
-import { VideoDetails } from './context/VideoContext'
+import {Home,Filler,Watch} from "./pages"
+import {Error} from './components/'
+import {Navbar} from './components/shared'
+import { VideoDetails } from './context'
 
 function App() {
   const [video,setVideo]=useState({});
@@ -23,6 +22,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/watch' element={<Watch/>}></Route>
+        <Route path='/filler' element={<Filler/>}></Route>
         <Route path='/*' element={<Error/>}></Route>
       </Routes>
       </div>

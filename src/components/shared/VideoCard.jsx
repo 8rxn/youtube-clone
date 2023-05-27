@@ -1,7 +1,7 @@
 import React,{useContext} from 'react'
 import { Link } from 'react-router-dom'
 import Skeleton from 'react-loading-skeleton'
-import { VideoDetails } from '../../context/VideoContext';
+import { VideoDetails } from '../../context/';
 
 const VideoCard = ({item}) => {
   const {setVideo}= useContext(VideoDetails);

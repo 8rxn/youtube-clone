@@ -1,7 +1,6 @@
 import React,{useContext} from 'react'
-import WatchPage from '../components/WatchPage/WatchPage.component'
-import Error from '../components/WatchPage/Error'
-import { VideoDetails } from '../context/VideoContext'
+import { Error,WatchPage } from '../components'
+import { VideoDetails } from '../context'
 
 
 const Watch = () => {

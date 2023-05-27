@@ -1,10 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
-import VideoCard from "../shared/VideoCard";
+import {VideoCard,Loader} from '../shared'
 import VideosGridskeleton from "./VideosGrid.skeleton";
-import Loader from "../shared/Loader/Loader";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { VideoDetails } from "../../context/VideoContext";
+import { VideoDetails } from "../../context";
 
 const VideosGrid = () => {
   const {page, setPage,data, setData,searchText,setVideo}= useContext(VideoDetails)
@@ -30,7 +29,6 @@ const VideosGrid = () => {
     
     useEffect(() => {
       setVideo("")
-
     }, )
     
 

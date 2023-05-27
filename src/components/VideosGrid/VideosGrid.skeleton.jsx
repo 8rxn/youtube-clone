@@ -1,5 +1,5 @@
 import React from 'react'
-import SkeletonCard from '../SkeletonCard/SkeltonCard'
+import SkeletonCard from '../shared/SkeletonCard/SkeltonCard'
 
 const VideosGridskeleton = () => {
   return (

@@ -2,14 +2,12 @@ import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import VideoCard from "../shared/VideoCard";
 import VideosGridskeleton from "./VideosGrid.skeleton";
-import Loader from "../Loader/Loader";
+import Loader from "../shared/Loader/Loader";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { VideoDetails } from "../../context/VideoContext";
 
 const VideosGrid = () => {
-  const {page, setPage}= useContext(VideoDetails)
-  const [data, setData] = useState([])
-
+  const {page, setPage,data, setData,searchText,setVideo}= useContext(VideoDetails)
 
   useEffect(() => {
     let reqOptions = {
@@ -29,19 +27,47 @@ const VideosGrid = () => {
         fetchPosts();
     },[page]);    
 
+    
+    useEffect(() => {
+      setVideo("")
+
+    }, )
+    
+
+    const searchPass=(item)=>{
+      if(item.creator.name?.toLowerCase().includes(searchText.toLowerCase().trim())){return true}
+      else if(item.creator.handle?.includes(searchText.toLowerCase().trim())){return true}
+      else if(item.submission.title?.toLowerCase().includes(searchText.toLowerCase().trim())){return true}
+      else if(item.submission.description?.toLowerCase().includes(searchText.toLowerCase().trim())){return true}
+      else {return false}
+    }
 
   if (data?.length > 0) {
 
-    return (
-      <InfiniteScroll dataLength={data.length} next={()=>{setPage(page+1)}} hasMore={true} loader={<Loader/>}>
-        <div className="grid mx-auto md:mx-10 h-full grid-cols-1   min-[500px]:grid-cols-2  md:grid-cols-3 xl:grid-cols-5    gap-10">
-        {data?.map((item, i) => (
-          <VideoCard key={i} item={item}></VideoCard>
-        ))}
+      return (
+        <InfiniteScroll dataLength={data.length} next={()=>{setPage(page+1)}} hasMore={true} loader={<Loader/>}>
+        <div className="grid mx-auto md:mx-10 overflow-hidden grid-cols-1   min-[500px]:grid-cols-2  md:grid-cols-3 xl:grid-cols-5    gap-10">
+        {data?.map((item, i) => 
+          {if(searchText.length<3){
+            return(
+              <VideoCard key={i} item={item}></VideoCard>
+              )
+            }
+            else{
+              if(searchPass(item)){
+                return(
+                  <VideoCard key={i} item={item}></VideoCard>
+                )
+              }
+            }
+          }
+          
+          )}
       </div>
       </InfiniteScroll>
     );
-  } else {
+  }
+  else {
     return <VideosGridskeleton />;
   }
 };

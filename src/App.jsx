@@ -4,6 +4,7 @@ import Navbar from './components/shared/Navbar'
 import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
 import Watch from './pages/Watch'
+import Error from './components/WatchPage/Error'
 import { VideoDetails } from './context/VideoContext'
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/watch' element={<Watch/>}></Route>
+        <Route path='/*' element={<Error/>}></Route>
       </Routes>
       </div>
     </VideoDetails.Provider>

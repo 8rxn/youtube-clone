@@ -1,5 +1,5 @@
 import React from 'react'
-import VideosGrid from '../components/VideosGrid/VideosGrid'
+import {VideosGrid} from '../components/'
 
 const Home = () => {    
     

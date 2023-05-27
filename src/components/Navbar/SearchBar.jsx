@@ -1,9 +1,11 @@
 import React,{useContext, useState} from 'react'
+import { useNavigate,useLocation } from 'react-router-dom'
 import {BsSearch} from 'react-icons/bs'
 import {MdOutlineCancel} from 'react-icons/md'
-import useWindowSize from '../../hooks/useWindowSize'
-import { VideoDetails } from '../../context/VideoContext'
-import { useNavigate,useLocation } from 'react-router-dom'
+import {useWindowSize} from '../../hooks/'
+import { VideoDetails } from '../../context'
+
+
 const SearchBar = () => {
   let navigate= useNavigate();
   let location = useLocation();

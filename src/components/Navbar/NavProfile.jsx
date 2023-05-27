@@ -13,22 +13,22 @@ const NavProfile = () => {
         <RiVideoAddLine/>
       </IconButton>
           </MenuHandler>
-          <MenuList className="bg-[#323232] text-white px-8  border-none shadow-lg  shadow-[#121212]/10  ">
-        <div className=" flex items-center gap-4 mb-4 text-xl">
+          <MenuList className="bg-[#323232] text-white px-8 cursor-pointer  border-none shadow-lg  shadow-[#121212]/10  ">
+        <MenuItem className=" flex items-center gap-4 mb-4 text-xl">
         <span className=''><RiUpload2Line/></span>
         <h2 className=' text-start leading-6'>
           Upload
         </h2>
          
-        </div>
+        </MenuItem>
 
-        <div className=" flex items-center gap-4 text-xl">
+        <MenuItem className=" flex items-center gap-4 text-xl cursor-pointer">
         <span className=''><RiVideoLine/></span>
         <h2 className=' text-start leading-6'>
           Create
         </h2>
          
-        </div>
+        </MenuItem>
 
         
         
@@ -43,13 +43,13 @@ const NavProfile = () => {
       </IconButton>
           </MenuHandler>
           <MenuList className="bg-[#323232] text-white px-10  border-none shadow-lg  shadow-[#121212]/10  ">
-        <div className=" flex items-center gap-8">
+        <MenuItem className=" flex items-center gap-8">
 
         <h2 className='text-lg text-start leading-6'>
           No Notifications yet
         </h2>
          
-        </div>
+        </MenuItem>
 
         
         
@@ -61,22 +61,22 @@ const NavProfile = () => {
         <Avatar size='sm' src=''></Avatar>
           </MenuHandler>
           <MenuList className="bg-[#323232] text-white px-5 pr-10 border-none shadow-lg  shadow-[#121212]/10  ">
-        <div className=" cursor-pointer flex items-center gap-8">
+        <MenuItem className=" cursor-pointer flex items-center gap-8" >
         <Avatar size='sm'  src=''></Avatar>
         <h2 className='text-lg text-start leading-6'>
           Profile Name<br/><span className='text-sm'>Profile Tag</span>
         </h2>
          
-        </div>
+        </MenuItem>
         <div className='h-[1px] my-4 w-full bg-white'>
 
         </div>
-        <div className=" cursor-pointer  flex items-center gap-2">
+        <MenuItem className=" cursor-pointer  flex items-center gap-2">
         <h2 className='text-lg text-center leading-6'>
           Options
         </h2>
          
-        </div>
+        </MenuItem>
         
         
       </MenuList>

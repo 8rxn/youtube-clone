@@ -1,9 +1,11 @@
 import React from 'react'
 import { VideoDetails } from '../../context/VideoContext';
-import {AiOutlineLike, AiOutlineComment,AiOutlineLink} from 'react-icons/ai'
+import {AiOutlineLike, AiOutlineComment,AiOutlineLink,AiOutlineArrowLeft} from 'react-icons/ai'
 import { Chip } from '@material-tailwind/react';
 import useWindowSize from "../../hooks/useWindowSize"
 import VideoPlayer from '../VideoPlayer/Player';
+import { Link } from 'react-router-dom';
+
 const WatchPage = () => {
   const { video } = React.useContext(VideoDetails);
 
@@ -53,7 +55,7 @@ const WatchPage = () => {
                 Follow{" "}
               </button>
             </div>
-            <h2>{video.submission.description}</h2>
+            <p>{video.submission.description}</p>
             <a
               href={video.submission.hyperlink}
               target="_blank"
@@ -78,7 +80,7 @@ const WatchPage = () => {
             height={"90vh"}
             url={video?.submission?.mediaUrl}
           />
-          <section className="text-start w-[35vw]  overflow-hidden m-auto flex flex-col justify-start gap-4">
+          <section className="text-start w-[35vw]  overflow-hidden m-auto flex flex-col justify-start gap-4 pl-4">
             <h2 className="font-bold text-2xl"> {video.submission.title}</h2>
 
             <div className=" flex gap-4 items-center md:flex-wrap xl:flex-nowrap">
@@ -113,19 +115,28 @@ const WatchPage = () => {
                 icon={<AiOutlineComment />}
               />
             </div>
-            <h2>{video.submission.description}</h2>
+            <p>{video.submission.description}</p>
 
+            <div className='flex justify-between'>
+            <Link
+              to={'/'}
+              className="bg-[#121212] border-2 rounded-xl px-4 w-fit py-2 hover:bg-[#222222] duration-150 ease-in self-start "
+            >
+             <span>
+                <AiOutlineArrowLeft/></span> Go Back
+            </Link>
             <a
               href={video.submission.hyperlink}
               target="_blank"
               rel="noreferrer"
-              className="bg-[#121212] border-2 rounded-xl px-4 w-fit py-2 hover:bg-[#222222] duration-150 ease-in self-end "
+              className="bg-[#121212] border-2 rounded-xl px-4 w-fit py-2 hover:bg-[#222222] duration-150 ease-in text-end "
             >
-              Go to GroCare{" "}
               <span>
                 <AiOutlineLink></AiOutlineLink>{" "}
               </span>
+              Go to GroCare{" "}
             </a>
+            </div>
           </section>
         </div>
       )}
